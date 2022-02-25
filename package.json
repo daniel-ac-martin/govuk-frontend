@@ -106,6 +106,7 @@
     "ignore": [
       "/dist/**/*.js",
       "/package/**/*.js",
+      "/package/**/*.mjs",
       "/src/govuk/vendor/polyfills/**/*.js"
     ]
   },

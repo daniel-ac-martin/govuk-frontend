@@ -85,6 +85,14 @@ function generateFixtures (file) {
   }
 }
 
+gulp.task('js:copysrc', () => {
+  return gulp.src([configPaths.src + '**/*.js', '!' + configPaths.src + '/**/*.test.js'])
+    .pipe(rename(path => {
+      path.extname = '.mjs'
+    }))
+    .pipe(gulp.dest(taskArguments.destination + '/govuk-esm/'))
+})
+
 function generateMacroOptions (file) {
   const json = convertYamlToJson(file)
   let paramsJson
